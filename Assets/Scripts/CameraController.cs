@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public PlayerMovement player;
+    public Movement player;
 
     void Update()
     {

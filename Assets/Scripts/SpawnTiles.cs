@@ -15,7 +15,7 @@ public class SpawnTiles : MonoBehaviour
 
     IEnumerator UpdateTiles()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         FindObjectOfType<FloorManager>().SpawnTile();
         Destroy(gameObject);
     }
