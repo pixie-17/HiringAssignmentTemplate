@@ -6,8 +6,7 @@ public class SpawnTiles : MonoBehaviour
 {
     public void OnCollisionExit(Collision collision)
     {
-        Debug.Log(collision);
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Leader")
         {
             StartCoroutine(UpdateTiles());
         }
@@ -15,7 +14,7 @@ public class SpawnTiles : MonoBehaviour
 
     IEnumerator UpdateTiles()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         FindObjectOfType<FloorManager>().SpawnTile();
         Destroy(gameObject);
     }

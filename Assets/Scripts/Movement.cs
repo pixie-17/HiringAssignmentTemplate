@@ -16,20 +16,12 @@ public class Movement : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            direction = new Vector3(touchDeltaPosition.x * speed * 3f * Time.fixedDeltaTime, 0f, speed);
+            direction = new Vector3(touchDeltaPosition.x * speed * 10f * Time.deltaTime, 0f, speed);
         }
-    }
 
-    void FixedUpdate()
-    {
-        Move();
-    }
-
-    void Move()
-    {
-        Vector3 move = transform.position + direction * Time.fixedDeltaTime;
+        Vector3 move = transform.position + direction * Time.deltaTime;
         move.x = Mathf.Clamp(move.x, 0.05f, 0.95f);
-        rb.MovePosition(move);
+        transform.position = move;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,9 +32,24 @@ public class Movement : MonoBehaviour
             {
                 inCollision = true;
                 Sign sign = collision.gameObject.GetComponent<Sign>();
-                CharacterManager.instance.count = sign.operation.Compute(CharacterManager.instance.count, sign.operand);
+                Destroy(sign.neighbouringSign);
+                int result = sign.operation.Compute(CharacterManager.instance.count, sign.operand);
+
+                if (result < 1)
+                {
+                    // Fail level
+                    CharacterManager.instance.DestroySquad();
+                    Time.timeScale = 0f;
+                }
+                CharacterManager.instance.count = result;
+                CharacterManager.instance.DestroySquad();
+                CharacterManager.instance.GenerateSquad();
             }
 
+            Destroy(collision.gameObject);
+        } else if (collision.gameObject.tag == "End")
+        {
+            // End Level
             Destroy(collision.gameObject);
         }
     }

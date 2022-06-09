@@ -3,33 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CharacterManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour
 {
     public GameObject characterPrefab, leaderPrefab;
     public Material[] unitMaterials; // Red = 100, Blue = 25, Green = 10, Orange = 5, Yellow = 1
     public Transform spawnPosition;
     private GameObject leader;
-    public float speed = 2f;
     public int count = 1;
-    public static CharacterManager instance = null;
-    public int maxPossibleScore = 1;
     public TMP_Text text;
     public Transform[] spawnPositions;
     public Queue<GameObject> squad = new Queue<GameObject>();
     
     public void Awake()
     {
-        instance = this;
-        leader = Instantiate(leaderPrefab, spawnPosition.position, Quaternion.identity);
-        leader.GetComponentInChildren<SkinnedMeshRenderer>().material = unitMaterials[unitMaterials.Length - 1];
-        text = leader.GetComponentInChildren<TMP_Text>();
-        squad.Enqueue(leader);
-        leader.transform.parent = spawnPosition.gameObject.transform;
+        GenerateSquad();
     }
 
     public void Update()
     {
-       text.text = "" + count;
+        text.text = "" + count;
     }
 
     public void GenerateSquad()
@@ -47,7 +39,7 @@ public class CharacterManager : MonoBehaviour
                     {
                         n -= units[i];
                         GameObject prefab = spawnIndex == 0 ? leaderPrefab : characterPrefab;
-                        GameObject unit = Instantiate(prefab, leader.transform.position + spawnPositions[spawnIndex].localPosition, Quaternion.identity);
+                        GameObject unit = Instantiate(prefab, spawnPosition.localPosition + spawnPositions[spawnIndex].localPosition, Quaternion.identity, this.transform);
                         unit.GetComponentInChildren<SkinnedMeshRenderer>().material = unitMaterials[i];
                         squad.Enqueue(unit);
                         spawnIndex++;
@@ -56,7 +48,6 @@ public class CharacterManager : MonoBehaviour
             }
 
             leader = squad.Peek();
-            leader.transform.parent = spawnPosition.gameObject.transform;
             text = leader.GetComponentInChildren<TMP_Text>();
         }
     }
@@ -69,5 +60,4 @@ public class CharacterManager : MonoBehaviour
             Destroy(unit);
         }
     }
-    
 }

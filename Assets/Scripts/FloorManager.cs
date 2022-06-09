@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class FloorManager : MonoBehaviour
     public GameObject rightSignPrefab;
     public Material tileMaterial;
     public Transform spawnPosition;
+    private Queue<Tuple<Operation, int>> signOperation;
+
 
     void Start()
     {
@@ -17,7 +20,7 @@ public class FloorManager : MonoBehaviour
             SpawnTile();
         }
 
-        StartCoroutine(SpawnSigns());
+        //StartCoroutine(SpawnSigns());
     }
 
     public void SpawnTile()
@@ -31,8 +34,12 @@ public class FloorManager : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(leftSignPrefab, spawnPosition.position, Quaternion.AngleAxis(90, Vector3.left));
-            Instantiate(rightSignPrefab, spawnPosition.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.left));
+            GameObject left = Instantiate(leftSignPrefab, spawnPosition.position, Quaternion.AngleAxis(90, Vector3.left));
+            GameObject right = Instantiate(rightSignPrefab, spawnPosition.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.left));
+
+            left.GetComponent<Sign>().neighbouringSign = right;
+            right.GetComponent<Sign>().neighbouringSign = left;
+
             yield return new WaitForSeconds(5f);
         }
     }

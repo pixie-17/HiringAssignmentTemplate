@@ -15,6 +15,11 @@ public class Operation
 {
     public OperationType type;
 
+    public Operation(OperationType type)
+    {
+        this.type = type;
+    }
+
     public override string ToString()
     {
         switch (type)
