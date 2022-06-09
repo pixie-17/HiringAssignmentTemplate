@@ -8,6 +8,9 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.forward * player.speed * Time.deltaTime;
+        if (!CharacterManager.instance.levelFinished)
+        {
+            transform.position += Vector3.forward * player.speed * Time.deltaTime;
+        }
     }
 }

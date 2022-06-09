@@ -39,11 +39,16 @@ public class EnemyManager : MonoBehaviour
                     {
                         n -= units[i];
                         GameObject prefab = spawnIndex == 0 ? leaderPrefab : characterPrefab;
-                        GameObject unit = Instantiate(prefab, spawnPosition.localPosition + spawnPositions[spawnIndex].localPosition, Quaternion.identity, this.transform);
+                        GameObject unit = Instantiate(prefab, spawnPosition.localPosition + spawnPositions[spawnIndex].localPosition, Quaternion.AngleAxis(180, Vector3.up), this.transform);
                         unit.GetComponentInChildren<SkinnedMeshRenderer>().material = unitMaterials[i];
                         squad.Enqueue(unit);
                         spawnIndex++;
                     }
+                }
+
+                if (spawnIndex == spawnPositions.Length)
+                {
+                    break;
                 }
             }
 

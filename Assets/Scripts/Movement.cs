@@ -8,20 +8,30 @@ public class Movement : MonoBehaviour
     public float speed = 3.5f;
     private Vector3 direction = Vector3.forward;
     private bool inCollision = false;
+    private Animator animator;
+
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+        //animator.SetBool("levelFinished", false);
+    }
 
     void Update()
     {
-        direction = Vector3.forward * speed;
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        if (!CharacterManager.instance.levelFinished)
         {
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            direction = new Vector3(touchDeltaPosition.x * speed * 10f * Time.deltaTime, 0f, speed);
-        }
+            direction = Vector3.forward * speed;
 
-        Vector3 move = transform.position + direction * Time.deltaTime;
-        move.x = Mathf.Clamp(move.x, 0.05f, 0.95f);
-        transform.position = move;
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+                direction = new Vector3(touchDeltaPosition.x * speed * 10f * Time.deltaTime, 0f, speed);
+            }
+
+            Vector3 move = transform.position + direction * Time.deltaTime;
+            move.x = Mathf.Clamp(move.x, 0.05f, 0.95f);
+            transform.position = move;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,18 +49,24 @@ public class Movement : MonoBehaviour
                 {
                     // Fail level
                     CharacterManager.instance.DestroySquad();
+                    FindObjectOfType<UI>().OpenFailed();
                     Time.timeScale = 0f;
+                } else
+                {
+                    CharacterManager.instance.count = result;
+                    CharacterManager.instance.DestroySquad();
+                    CharacterManager.instance.GenerateSquad();
                 }
-                CharacterManager.instance.count = result;
-                CharacterManager.instance.DestroySquad();
-                CharacterManager.instance.GenerateSquad();
             }
 
             Destroy(collision.gameObject);
         } else if (collision.gameObject.tag == "End")
         {
             // End Level
+            animator.SetBool("levelFinished", true);
+            CharacterManager.instance.levelFinished = true;
             Destroy(collision.gameObject);
+            FindObjectOfType<UI>().OpenFinished();
         }
     }
 

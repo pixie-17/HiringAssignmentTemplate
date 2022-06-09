@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Sign
   - Enemy
+  - Leader
+  - End
   layers:
   - Default
   - TransparentFX

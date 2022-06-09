@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         GameObject playerLeaderObject = GameObject.FindWithTag("Leader");
         playerLeader = playerLeaderObject == null ? Vector3.zero : playerLeaderObject.transform.position;
         animator = GetComponent<Animator>();
-        animator.SetBool("isRunning", false);
+        //animator.SetBool("isRunning", false);
     }
 
     void Update()
@@ -47,15 +47,20 @@ public class Enemy : MonoBehaviour
             int result = CharacterManager.instance.count - em.count;
             if (result < 1)
             {
-                CharacterManager.instance.count = 0;
-                //Fail level
+                // Fail level
+                em.count -= CharacterManager.instance.count;
+                em.DestroySquad();
+                em.GenerateSquad();
+                CharacterManager.instance.DestroySquad();
+                FindObjectOfType<UI>().OpenFailed();
                 Time.timeScale = 0f;
+            } else
+            {
+                CharacterManager.instance.count = result;
+                CharacterManager.instance.DestroySquad();
+                CharacterManager.instance.GenerateSquad();
+                Destroy(em.gameObject);
             }
-
-            CharacterManager.instance.count = result;
-            CharacterManager.instance.DestroySquad();
-            CharacterManager.instance.GenerateSquad();
-            Destroy(em.gameObject);
         }
     }
 }

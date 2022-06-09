@@ -16,6 +16,7 @@ public class CharacterManager : MonoBehaviour
     public TMP_Text text;
     public Transform[] spawnPositions;
     public Queue<GameObject> squad = new Queue<GameObject>();
+    public bool levelFinished = false;
     
     public void Awake()
     {
@@ -29,7 +30,15 @@ public class CharacterManager : MonoBehaviour
 
     public void Update()
     {
-       text.text = "" + count;
+        text.text = "" + count;
+
+        if (levelFinished)
+        {
+            foreach (GameObject unit in squad)
+            {
+                unit.GetComponent<Animator>().SetBool("levelFinished", true);
+            }
+        }
     }
 
     public void GenerateSquad()
@@ -52,6 +61,11 @@ public class CharacterManager : MonoBehaviour
                         squad.Enqueue(unit);
                         spawnIndex++;
                     }
+                }
+
+                if (spawnIndex == spawnPositions.Length)
+                {
+                    break;
                 }
             }
 
