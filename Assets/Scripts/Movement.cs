@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
             {
                 inCollision = true;
                 Sign sign = collision.gameObject.GetComponent<Sign>();
-                Debug.Log(sign.text.text);
+                CharacterManager.instance.count = sign.operation.Compute(CharacterManager.instance.count, sign.operand);
             }
 
             Destroy(collision.gameObject);

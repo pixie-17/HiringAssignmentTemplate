@@ -31,4 +31,21 @@ public class Operation
                 return "Unknown operation";
         }
     }
+
+    public int Compute(int x, int operand)
+    {
+        switch (type)
+        {
+            case OperationType.ADD:
+                return x + operand;
+            case OperationType.SUBTRACT:
+                return x - operand;
+            case OperationType.MULTIPLY:
+                return x * operand;
+            case OperationType.DIVIDE:
+                return x / operand;
+            default:
+                return 0;
+        }
+    }
 }
