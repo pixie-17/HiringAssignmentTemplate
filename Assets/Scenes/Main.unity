@@ -448,10 +448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 1906015796387160, guid: 9ff138fdf8b28ed4d81b52035a11d37e, type: 3}
-  signPrefab: {fileID: 1143588746045165609, guid: 3ec7a376b3b43a74e962131d93fb6e52,
+  leftSignPrefab: {fileID: 1143588746045165609, guid: 3ec7a376b3b43a74e962131d93fb6e52,
     type: 3}
-  leftSignMaterial: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609, type: 2}
-  rightSignMaterial: {fileID: 2100000, guid: 74deb72c53db635479c108dbacd68bb2, type: 2}
+  rightSignPrefab: {fileID: 1143588746045165609, guid: 37c1c48ca60a88a44a6a1e11d29bbf91,
+    type: 3}
   tileMaterial: {fileID: 2100000, guid: ee178595c69007f46bf030c509a32f14, type: 2}
   spawnPosition: {fileID: 2135010038}
 --- !u!4 &758889554

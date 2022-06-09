@@ -148,9 +148,10 @@ GameObject:
   - component: {fileID: 4128187353580876510}
   - component: {fileID: 8393302013293249887}
   - component: {fileID: 5327577972502623313}
+  - component: {fileID: 8680432673982942227}
   m_Layer: 0
-  m_Name: Sign
-  m_TagString: Untagged
+  m_Name: RedSign
+  m_TagString: Sign
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ab27c4a4c283cac489ef589c67077626, type: 2}
+  - {fileID: 2100000, guid: 74deb72c53db635479c108dbacd68bb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -235,6 +236,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: bef96b6e1cd37444fa6937ae99361014, type: 3}
+--- !u!114 &8680432673982942227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143588746045165609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cda38c46e78af04cb5dd212bededb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 788389248368693883}
+  operation:
+    type: 3
+  operand: 7
 --- !u!1 &2808145626700674698
 GameObject:
   m_ObjectHideFlags: 0

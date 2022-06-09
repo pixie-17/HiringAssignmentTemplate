@@ -30,4 +30,14 @@ public class Movement : MonoBehaviour
         move.x = Mathf.Clamp(move.x, 0.05f, 0.95f);
         rb.MovePosition(move);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Sign")
+        {
+            Sign sign = collision.gameObject.GetComponent<Sign>();
+            Debug.Log(sign.text.text);
+            Destroy(collision.gameObject);
+        }
+    }
 }

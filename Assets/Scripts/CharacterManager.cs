@@ -8,6 +8,7 @@ public class CharacterManager : MonoBehaviour
     public Transform spawnPosition;
     private GameObject character;
     public float speed = 2f;
+    public int count = 1;
 
     void Awake()
     {

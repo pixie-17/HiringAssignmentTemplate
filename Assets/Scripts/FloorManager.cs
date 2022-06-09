@@ -5,9 +5,8 @@ using UnityEngine;
 public class FloorManager : MonoBehaviour
 {
     public GameObject tilePrefab;
-    public GameObject signPrefab;
-    public Material leftSignMaterial;
-    public Material rightSignMaterial;
+    public GameObject leftSignPrefab;
+    public GameObject rightSignPrefab;
     public Material tileMaterial;
     public Transform spawnPosition;
 
@@ -30,14 +29,10 @@ public class FloorManager : MonoBehaviour
 
     IEnumerator SpawnSigns()
     {
-        GameObject leftSign, rightSign;
-
         while (true)
         {
-            leftSign = Instantiate(signPrefab, spawnPosition.position, Quaternion.AngleAxis(90, Vector3.left));
-            leftSign.GetComponent<MeshRenderer>().material = leftSignMaterial;
-            rightSign = Instantiate(signPrefab, spawnPosition.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.left));
-            rightSign.GetComponent<MeshRenderer>().material = rightSignMaterial;
+            Instantiate(leftSignPrefab, spawnPosition.position, Quaternion.AngleAxis(90, Vector3.left));
+            Instantiate(rightSignPrefab, spawnPosition.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.left));
             yield return new WaitForSeconds(5f);
         }
     }
