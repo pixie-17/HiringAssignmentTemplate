@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody rb;
-    public float speed = 2f;
+    public float speed = 3.5f;
     private Vector3 direction = Vector3.forward;
 
     void Update()

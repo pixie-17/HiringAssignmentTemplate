@@ -201,14 +201,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.078459114, y: 0, z: 0, w: 0.99691737}
-  m_LocalPosition: {x: 0.5, y: 2, z: -8}
+  m_LocalRotation: {x: 0.10886683, y: 0, z: 0, w: 0.9940564}
+  m_LocalPosition: {x: 0.5, y: 2.5, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 9, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.5, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 1906015796387160, guid: 9ff138fdf8b28ed4d81b52035a11d37e, type: 3}
+  signPrefab: {fileID: 1143588746045165609, guid: 3ec7a376b3b43a74e962131d93fb6e52,
+    type: 3}
+  leftSignMaterial: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609, type: 2}
+  rightSignMaterial: {fileID: 2100000, guid: 74deb72c53db635479c108dbacd68bb2, type: 2}
+  tileMaterial: {fileID: 2100000, guid: ee178595c69007f46bf030c509a32f14, type: 2}
   spawnPosition: {fileID: 2135010038}
 --- !u!4 &758889554
 Transform:
