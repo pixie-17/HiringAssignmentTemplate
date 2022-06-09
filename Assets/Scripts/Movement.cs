@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public float speed = 3.5f;
     private Vector3 direction = Vector3.forward;
+    private bool inCollision = false;
 
     void Update()
     {
@@ -35,9 +36,19 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Sign")
         {
-            Sign sign = collision.gameObject.GetComponent<Sign>();
-            Debug.Log(sign.text.text);
+            if (!inCollision)
+            {
+                inCollision = true;
+                Sign sign = collision.gameObject.GetComponent<Sign>();
+                Debug.Log(sign.text.text);
+            }
+
             Destroy(collision.gameObject);
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        inCollision = false;
     }
 }
