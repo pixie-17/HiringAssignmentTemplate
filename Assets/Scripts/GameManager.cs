@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject PlayerLeader { get; set; }
     public bool survival;
     public SquadManager playerSquad;
-    public float playerSpeed, enemySpeed;
+    public float playerSpeed, playerHorizontalSpeed, enemySpeed;
     public SurvivalMode survivalMode;
     public FloorManager floorManager;
     public bool LevelFinished { get; set; }

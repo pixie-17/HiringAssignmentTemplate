@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-                direction = new Vector3(touchDeltaPosition.x * GameManager.instance.playerSpeed * 10f * Time.deltaTime, 0f, GameManager.instance.playerSpeed);
+                direction = new Vector3(touchDeltaPosition.x * GameManager.instance.playerSpeed * GameManager.instance.playerHorizontalSpeed * Time.deltaTime, 0f, GameManager.instance.playerSpeed);
             }
 
             Vector3 move = transform.position + direction * Time.deltaTime;

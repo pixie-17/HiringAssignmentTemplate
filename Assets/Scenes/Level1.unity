@@ -933,6 +933,7 @@ MonoBehaviour:
   survival: 0
   playerSquad: {fileID: 249917918}
   playerSpeed: 2
+  playerHorizontalSpeed: 10
   enemySpeed: 3
   survivalMode: {fileID: 0}
   floorManager: {fileID: 371742706}
