@@ -4,7 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3.5f;
     private Vector3 direction = Vector3.forward;
-    private bool inCollision = false;
 
     void Update()
     {
@@ -28,13 +27,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Sign")
         {
-            if (!inCollision)
+            if (!GameManager.instance.playerSquad.InCollision)
             {
-                inCollision = true;
+                GameManager.instance.playerSquad.InCollision = true;
                 Sign sign = collision.gameObject.GetComponent<Sign>();
                 Destroy(sign.neighbouringSign);
                 int result = sign.operation.Compute(GameManager.instance.playerSquad.count, sign.operand);
-
+                Debug.Log(GameManager.instance.playerSquad.count + " " + sign.operand);
                 if (result < 1)
                 {
                     // Fail level
@@ -62,6 +61,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        inCollision = false;
+        GameManager.instance.playerSquad.InCollision = false;
     }
 }

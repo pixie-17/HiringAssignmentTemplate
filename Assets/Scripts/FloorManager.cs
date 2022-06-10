@@ -12,7 +12,6 @@ public class FloorManager : MonoBehaviour
     public Transform spawnPosition;
     private Queue<Tuple<Operation, int>> signOperation;
 
-
     void Start()
     {
         for (int i = 0; i < 20; ++i)

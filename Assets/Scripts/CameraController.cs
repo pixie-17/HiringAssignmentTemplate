@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     void Update()
     {
-        if (!GameManager.instance.LevelFinished)
+        if (GameManager.instance != null && !GameManager.instance.LevelFinished)
         {
             transform.position += Vector3.forward * GameManager.instance.playerSpeed * Time.deltaTime;
         }
