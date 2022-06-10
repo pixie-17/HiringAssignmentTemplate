@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
                 Sign sign = collision.gameObject.GetComponent<Sign>();
                 Destroy(sign.neighbouringSign);
                 int result = sign.operation.Compute(GameManager.instance.playerSquad.count, sign.operand);
-                Debug.Log(GameManager.instance.playerSquad.count + " " + sign.operand);
                 if (result < 1)
                 {
                     // Fail level
