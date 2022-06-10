@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/* Controls the spawning of single tile */
 public class FloorManager : MonoBehaviour
 {
     public GameObject tilePrefab;

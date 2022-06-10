@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+/* Controls the movement and collisions of enemy units and leader */
 public class EnemyMovement : MonoBehaviour
 {
     private SquadManager squadManager;

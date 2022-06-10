@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Basic UI operations */
 public class UI : MonoBehaviour
 {
     public GameObject pauseMenu, finishedMenu, failedMenu;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/* Class for changing scenes */
+
 public class SceneChanger : MonoBehaviour
 {
     private const int mainMenu = 0;

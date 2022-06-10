@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Main game controller */
+
 public class GameManager : MonoBehaviour
 {
     public GameObject PlayerLeader { get; set; }

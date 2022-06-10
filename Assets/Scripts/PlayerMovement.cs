@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+/* Controls the movement and collision of player */
 public class PlayerMovement : MonoBehaviour
 {
 

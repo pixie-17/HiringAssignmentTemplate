@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Continuously spawns and destroys floor tiles */
 public class SpawnTiles : MonoBehaviour
 {
     public void OnCollisionExit(Collision collision)

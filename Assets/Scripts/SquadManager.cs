@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/* Controls the formation of units */
 public class SquadManager : MonoBehaviour
 {
     private Queue<GameObject> squad = new Queue<GameObject>();

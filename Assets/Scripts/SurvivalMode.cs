@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Linq;
 
+/* Controller for survival mode */
 public class SurvivalMode : MonoBehaviour
 {
     public GameObject enemyPrefab;
