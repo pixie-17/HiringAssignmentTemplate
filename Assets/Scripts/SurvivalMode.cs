@@ -77,6 +77,6 @@ public class SurvivalMode : MonoBehaviour
 
     public int ChooseCount()
     {
-        return (int) (Random.Range((0.65f * maxPoints), (float) maxPoints));
+        return (int) (Random.Range((0.65f * maxPoints), (float) maxPoints - 1f));
     }
 }
