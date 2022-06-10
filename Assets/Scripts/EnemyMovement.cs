@@ -1,8 +1,8 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed;
     private SquadManager squadManager;
     private Vector3 playerLeader;
     private Vector3 direction = Vector3.zero;
@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
             direction.Normalize();
-            transform.position += speed * Time.deltaTime * direction;
+            transform.position += GameManager.instance.enemySpeed * Time.deltaTime * direction;
         }
     }
 
@@ -35,7 +35,6 @@ public class EnemyMovement : MonoBehaviour
         {
             squadManager.InCollision = true;
             int result = GameManager.instance.playerSquad.count - squadManager.count;
-
             if (result < 1)
             {
                 // Fail level
@@ -60,7 +59,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Leader")
         {
-            squadManager.InCollision = false;
+            StartCoroutine(CancelCollision());
         }
+    }
+
+    IEnumerator CancelCollision()
+    {
+        yield return new WaitForSeconds(0.5f);
+        squadManager.InCollision = false;
     }
 }

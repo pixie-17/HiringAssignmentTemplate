@@ -17,4 +17,9 @@ public class Sign : MonoBehaviour
         text.text = "X " + operation + " " + operand;
         GetComponent<MeshRenderer>().material = mat;
     }
+
+    private void Update()
+    {
+        text.text = "X " + operation + " " + operand;
+    }
 }

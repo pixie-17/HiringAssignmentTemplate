@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject PlayerLeader { get; set; }
+    public bool survival;
     public SquadManager playerSquad;
-    public float playerSpeed;
+    public float playerSpeed, enemySpeed;
+    public SurvivalMode survivalMode;
+    public FloorManager floorManager;
     public bool LevelFinished { get; set; }
     public static GameManager instance = null;
 
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PlayerLeader = GameObject.FindWithTag("Leader");
+        
         if (LevelFinished)
         {
             playerSquad.Jump();

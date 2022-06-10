@@ -50,7 +50,7 @@ public class SquadManager : MonoBehaviour
                     }
                 }
 
-                if (spawnIndex == spawnPositions.Length)
+                if (spawnIndex >= spawnPositions.Length)
                 {
                     break;
                 }

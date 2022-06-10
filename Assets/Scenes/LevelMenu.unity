@@ -498,7 +498,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 811408601}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: goToLevel
+        m_MethodName: GoToLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -984,7 +984,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 811408601}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: goToLevel
+        m_MethodName: GoToLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1292,7 +1292,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 811408601}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: goToMainMenu
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

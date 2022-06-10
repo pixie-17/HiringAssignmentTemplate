@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelMenu.unity
     guid: ffa1cd424d2528c4fb38968e6f81005a
   - enabled: 1
+    path: Assets/Scenes/Survival.unity
+    guid: fd526c0f37b1f97469b8d3f3500bc500
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 253ddd050ba0e974aa691bb1abea56c8
   - enabled: 1

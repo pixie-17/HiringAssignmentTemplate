@@ -153,10 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 1906015796387160, guid: 9ff138fdf8b28ed4d81b52035a11d37e, type: 3}
-  leftSignPrefab: {fileID: 1143588746045165609, guid: 3ec7a376b3b43a74e962131d93fb6e52,
-    type: 3}
-  rightSignPrefab: {fileID: 1143588746045165609, guid: 37c1c48ca60a88a44a6a1e11d29bbf91,
-    type: 3}
   tileMaterial: {fileID: 2100000, guid: c361172d179c9dc4fa5ae223e8cb65e8, type: 2}
   spawnPosition: {fileID: 127928280}
 --- !u!4 &37247513
@@ -964,8 +960,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d299192c11975d4181250fc32e739aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  survival: 0
   playerSquad: {fileID: 326384670}
   playerSpeed: 2
+  enemySpeed: 3
+  survivalMode: {fileID: 0}
+  floorManager: {fileID: 37247512}
 --- !u!4 &326384669
 Transform:
   m_ObjectHideFlags: 0
@@ -2074,7 +2074,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1401000971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: resetLevel
+        m_MethodName: ResetLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2630,7 +2630,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1401000971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: goToLevelMenu
+        m_MethodName: GoToLevelMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3696,7 +3696,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1401000971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: resetLevel
+        m_MethodName: ResetLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4234,7 +4234,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1401000971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: resetLevel
+        m_MethodName: ResetLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4459,7 +4459,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1401000971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: goToLevelMenu
+        m_MethodName: GoToLevelMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5362,7 +5362,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1401000971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: goToLevelMenu
+        m_MethodName: GoToLevelMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
