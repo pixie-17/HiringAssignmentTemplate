@@ -71,7 +71,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008294345393968641}
-  - component: {fileID: 1008294345393968640}
   m_Layer: 0
   m_Name: SpawnPositions
   m_TagString: Untagged
@@ -105,46 +104,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1008294345393968640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008294345393968670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 297585dd52061364dae3d835dca70918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 6533878375028063792, guid: 1b1ce623a0ba7584fafbc18b7fb80ad0,
-    type: 3}
-  leaderPrefab: {fileID: 6533878375028063792, guid: cd153dd0027023c49bebc6a4a8b8c1e0,
-    type: 3}
-  unitMaterials:
-  - {fileID: 2100000, guid: c70e075a2144ba04784d74b7b2889fd3, type: 2}
-  - {fileID: 2100000, guid: 6968e89851431104b8f931c37d69356b, type: 2}
-  - {fileID: 2100000, guid: 5abb3d18170c7cc4b8ce3577ef8b5ed8, type: 2}
-  - {fileID: 2100000, guid: 1e75d51d555dec54b90544819dd5e13a, type: 2}
-  - {fileID: 2100000, guid: 4930c6ffa5b9b9f4098249a43abf8506, type: 2}
-  spawnPosition: {fileID: 1008294345393968641}
-  speed: 2
-  count: 1
-  maxPossibleScore: 1
-  text: {fileID: 0}
-  spawnPositions:
-  - {fileID: 8602188947468131576}
-  - {fileID: 1765554342068266009}
-  - {fileID: 1195630742274327988}
-  - {fileID: 2508488336747262162}
-  - {fileID: 8118874208741226164}
-  - {fileID: 3991185857901262442}
-  - {fileID: 2116372960086761241}
-  - {fileID: 5590980285298619918}
-  - {fileID: 2387626263158947971}
-  - {fileID: 5983468012610384142}
-  - {fileID: 920534391133102129}
-  levelFinished: 0
 --- !u!1 &2199962527678763397
 GameObject:
   m_ObjectHideFlags: 0

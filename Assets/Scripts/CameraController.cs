@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Movement player;
-
     void Update()
     {
-        if (!CharacterManager.instance.levelFinished)
+        if (!GameManager.instance.LevelFinished)
         {
-            transform.position += Vector3.forward * player.speed * Time.deltaTime;
+            transform.position += Vector3.forward * GameManager.instance.playerSpeed * Time.deltaTime;
         }
     }
 }

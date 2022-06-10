@@ -12,6 +12,14 @@ public class SpawnTiles : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (GameManager.instance.LevelFinished)
+        {
+            StopAllCoroutines();
+        }
+    }
+
     IEnumerator UpdateTiles()
     {
         yield return new WaitForSeconds(2f);

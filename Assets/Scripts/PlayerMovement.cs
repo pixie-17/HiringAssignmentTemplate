@@ -1,24 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody rb;
     public float speed = 3.5f;
     private Vector3 direction = Vector3.forward;
     private bool inCollision = false;
-    private Animator animator;
-
-    public void Start()
-    {
-        animator = GetComponent<Animator>();
-        //animator.SetBool("levelFinished", false);
-    }
 
     void Update()
     {
-        if (!CharacterManager.instance.levelFinished)
+        if (!GameManager.instance.LevelFinished)
         {
             direction = Vector3.forward * speed;
 
@@ -43,28 +33,28 @@ public class Movement : MonoBehaviour
                 inCollision = true;
                 Sign sign = collision.gameObject.GetComponent<Sign>();
                 Destroy(sign.neighbouringSign);
-                int result = sign.operation.Compute(CharacterManager.instance.count, sign.operand);
+                int result = sign.operation.Compute(GameManager.instance.playerSquad.count, sign.operand);
 
                 if (result < 1)
                 {
                     // Fail level
-                    CharacterManager.instance.DestroySquad();
+                    GameManager.instance.playerSquad.DestroySquad();
                     FindObjectOfType<UI>().OpenFailed();
                     Time.timeScale = 0f;
                 } else
                 {
-                    CharacterManager.instance.count = result;
-                    CharacterManager.instance.DestroySquad();
-                    CharacterManager.instance.GenerateSquad();
+                    GameManager.instance.playerSquad.count = result;
+                    GameManager.instance.playerSquad.DestroySquad();
+                    GameManager.instance.playerSquad.GenerateSquad(transform.position);
                 }
             }
 
             Destroy(collision.gameObject);
+
         } else if (collision.gameObject.tag == "End")
         {
             // End Level
-            animator.SetBool("levelFinished", true);
-            CharacterManager.instance.levelFinished = true;
+            GameManager.instance.LevelFinished = true;
             Destroy(collision.gameObject);
             FindObjectOfType<UI>().OpenFinished();
         }

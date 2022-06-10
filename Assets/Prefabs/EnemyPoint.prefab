@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3708965059915274316}
-  - component: {fileID: 3708965059915274315}
+  - component: {fileID: -4755692592789024658}
   m_Layer: 0
   m_Name: EnemyPoint
   m_TagString: Untagged
@@ -105,7 +105,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3708965059915274315
+--- !u!114 &-4755692592789024658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3708965059915274317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d442a8357132fd4ea7b52232c56863b, type: 3}
+  m_Script: {fileID: 11500000, guid: 741a116668be6db4fa040eeedcb9d5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 6533878375028063792, guid: 6d81393dc20c4244ab6a82f18e372fd0,
@@ -127,9 +127,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 7da9229d1c3dca44796e6e95ec92622e, type: 2}
   - {fileID: 2100000, guid: 8403838ed886bb44993202f994d0591b, type: 2}
   - {fileID: 2100000, guid: d8dc4645d70b023408a632d547033513, type: 2}
-  spawnPosition: {fileID: 3708965059915274316}
-  count: 1
-  text: {fileID: 0}
   spawnPositions:
   - {fileID: 5572904373347046729}
   - {fileID: 7251272019873863867}
@@ -142,6 +139,7 @@ MonoBehaviour:
   - {fileID: 7864154435970502146}
   - {fileID: 4977226677634833012}
   - {fileID: 5702161134135529725}
+  angle: 180
 --- !u!1 &3850524407448630481
 GameObject:
   m_ObjectHideFlags: 0

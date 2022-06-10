@@ -1,30 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class EnemyManager : MonoBehaviour
+public class SquadManager : MonoBehaviour
 {
+    private Queue<GameObject> squad = new Queue<GameObject>();
+
     public GameObject characterPrefab, leaderPrefab;
     public Material[] unitMaterials; // Red = 100, Blue = 25, Green = 10, Orange = 5, Yellow = 1
-    public Transform spawnPosition;
-    private GameObject leader;
-    public int count = 1;
-    public TMP_Text text;
     public Transform[] spawnPositions;
-    public Queue<GameObject> squad = new Queue<GameObject>();
-    
+    public float angle;
+    public int count;
+    public TMP_Text CountText { get; set; }
+    public bool InCollision { get; set; }
+
+
     public void Awake()
     {
-        GenerateSquad();
+        GenerateSquad(spawnPositions[0].position);
     }
 
     public void Update()
     {
-        text.text = "" + count;
+        if (CountText != null)
+        {
+            CountText.text = "" + count;
+        }
     }
 
-    public void GenerateSquad()
+    public void GenerateSquad(Vector3 center)
     {
         if (count != 0)
         {
@@ -39,7 +43,7 @@ public class EnemyManager : MonoBehaviour
                     {
                         n -= units[i];
                         GameObject prefab = spawnIndex == 0 ? leaderPrefab : characterPrefab;
-                        GameObject unit = Instantiate(prefab, spawnPosition.localPosition + spawnPositions[spawnIndex].localPosition, Quaternion.AngleAxis(180, Vector3.up), this.transform);
+                        GameObject unit = Instantiate(prefab, center + spawnPositions[spawnIndex].localPosition, Quaternion.AngleAxis(angle, Vector3.up), this.transform);
                         unit.GetComponentInChildren<SkinnedMeshRenderer>().material = unitMaterials[i];
                         squad.Enqueue(unit);
                         spawnIndex++;
@@ -52,8 +56,10 @@ public class EnemyManager : MonoBehaviour
                 }
             }
 
-            leader = squad.Peek();
-            text = leader.GetComponentInChildren<TMP_Text>();
+            if (squad.Count != 0)
+            {
+                CountText = squad.Peek().GetComponentInChildren<TMP_Text>();
+            }
         }
     }
 
@@ -65,4 +71,13 @@ public class EnemyManager : MonoBehaviour
             Destroy(unit);
         }
     }
+
+    public void Jump()
+    {
+        foreach (GameObject unit in squad)
+        {
+            unit.GetComponent<Animator>().SetBool("levelFinished", true);
+        }
+    }
 }
+
