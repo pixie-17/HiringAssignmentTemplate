@@ -31,13 +31,16 @@ public class UIManager : MonoBehaviour
 
     private void Pause()
     {
-        _pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        if (!GameManager.Instance.LevelFinished && _pauseMenu != null)
+        {
+            _pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     private void Resume()
     {
-        if (_pauseMenu != null)
+        if (!GameManager.Instance.LevelFinished && _pauseMenu != null)
         {
             _pauseMenu.SetActive(false);
             Time.timeScale = 1f;
