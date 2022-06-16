@@ -42,7 +42,6 @@ public class PlayerManager : Squad
         }
         else
         {
-            OnRecompute();
             base.RecomputeSquad(newCount);
         }
         CancelCollision();
@@ -82,6 +81,7 @@ public class PlayerManager : Squad
         {
             int result = sign.Equation.Compute(Count);
             OnHitSign(sign);
+            OnRecompute();
             RecomputeSquad(result);
         }
     }

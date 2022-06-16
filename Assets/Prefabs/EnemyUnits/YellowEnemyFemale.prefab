@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: -8024566074118866074}
   m_Layer: 0
   m_Name: YellowEnemyFemale
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -977,8 +977,8 @@ Transform:
   m_GameObject: {fileID: 1249064352584784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4839508566551504}
   - {fileID: 4418873904594330}
@@ -1001,9 +1001,9 @@ Animator:
   m_GameObject: {fileID: 1249064352584784}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b5f71c859f9f9bf41badda8a4650082c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dad42de0a4ec7a849846eb26291770e4, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1053,8 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f19478070018ed47b42ee7f585825a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _countText: {fileID: 110366307844121336, guid: a6ab9efe5b77a71429b84a8e07fcc90f,
-    type: 3}
+  _countText: {fileID: 905537622982558703}
 --- !u!114 &-6122514426450926943
 MonoBehaviour:
   m_ObjectHideFlags: 0

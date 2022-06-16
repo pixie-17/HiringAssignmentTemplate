@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: -2321074472347780330}
   m_Layer: 0
   m_Name: WhitePlayerFemale
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2179,8 +2179,8 @@ Transform:
   m_GameObject: {fileID: 1897602917353718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4981504774743452}
   - {fileID: 4577044819641546}
@@ -2203,7 +2203,7 @@ Animator:
   m_GameObject: {fileID: 1897602917353718}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b5f71c859f9f9bf41badda8a4650082c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35af3940648b57d41bd67e4267aed48c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
