@@ -108,7 +108,7 @@ public class SignManager : MonoBehaviour
 
     private void InitializeSigns()
     {
-        int count = Random.Range(_minSignsInRow, _maxSignsInRow);
+        int count = Random.Range(_minSignsInRow, _maxSignsInRow + 1);
         List<Equation> equations = EquationOracle.Instance.ChooseEquations(count);
 
         SignNeighbors signs = new SignNeighbors();

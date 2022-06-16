@@ -105,9 +105,4 @@ public class PlayerManager : Squad
             RecomputeSquad(result);
         }
     }
-
-    protected override string GetParentName()
-    {
-        return "PlayerSquad";
-    }
 }

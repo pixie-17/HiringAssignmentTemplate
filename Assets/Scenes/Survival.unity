@@ -933,6 +933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1702762760094797486, guid: 11c614b63626b434e95a09fdeb59d5ab,
         type: 3}
+      propertyPath: _maxSignsInRow
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702762760094797486, guid: 11c614b63626b434e95a09fdeb59d5ab,
+        type: 3}
       propertyPath: _signSpawnPoint
       value: 
       objectReference: {fileID: 41965656}

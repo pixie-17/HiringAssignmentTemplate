@@ -35,7 +35,6 @@ public abstract class Squad : MonoBehaviour
     protected int _formationLength;
     
     private List<Vector3> _spawnPoints;
-    protected GameObject _parent;
 
     protected void Initialize()
     {
@@ -52,7 +51,6 @@ public abstract class Squad : MonoBehaviour
         {
             _spawnPoints.Add(child.transform.localPosition);
         }
-        _parent = new GameObject(GetParentName());
     }
 
     private void SortUnitValues()
@@ -107,7 +105,6 @@ public abstract class Squad : MonoBehaviour
     }
 
     protected abstract UnitObjectPooler GetObjectPooler(GameObject prefab);
-    protected abstract string GetParentName();
 
     protected void DestroySquad()
     {
@@ -130,7 +127,6 @@ public abstract class Squad : MonoBehaviour
         Unit unit = pool.Spawn();
         unit.transform.position = slotPosition;
         unit.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.up);
-        unit.gameObject.transform.SetParent(_parent.transform, true);
         _squad.Enqueue(unit);
     }
 

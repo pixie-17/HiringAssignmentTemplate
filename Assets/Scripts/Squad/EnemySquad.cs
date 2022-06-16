@@ -61,9 +61,4 @@ public class EnemySquad : Squad
     {
         return EnemyManager.Instance.GetObjectPooler(prefab);
     }
-
-    protected override string GetParentName()
-    {
-        return "EnemySquad";
-    }
 }
