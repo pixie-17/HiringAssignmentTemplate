@@ -19,23 +19,23 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Instance { get; set; }
 
-    public void Awake()
+    private void Awake()
     {
         Instance = this;
     }
 
-    public void Start()
+    private void Start()
     {
         Time.timeScale = 1f;
     }
 
-    public void Pause()
+    private void Pause()
     {
         _pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 
-    public void Resume()
+    private void Resume()
     {
         if (_pauseMenu != null)
         {
