@@ -38,12 +38,12 @@ public class SurvivalMode : MonoBehaviour
         {
             yield return new WaitForSeconds(signStep);
             //Vector3 position = spawnPosition.position + new Vector3(0.5f, 0, 0);
-            Vector3 position = GameManager.instance.floorManager.spawnPosition.position + new Vector3(0.5f, 0, 0);
+           /* Vector3 position = GameManager.instance.floorManager.TileSpawnPoint.position + new Vector3(0.5f, 0, 0);
             GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.AngleAxis(180f, Vector3.up));
             enemy.GetComponent<SquadManager>().count = ChooseCount();
             maxPoints -= enemy.GetComponent<SquadManager>().count;
             enemy.GetComponent<SquadManager>().DestroySquad();
-            enemy.GetComponent<SquadManager>().GenerateSquad(position);
+            enemy.GetComponent<SquadManager>().GenerateSquad(position);*/
         }
     }
 
@@ -52,8 +52,8 @@ public class SurvivalMode : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(signStep);
-            Vector3 position = GameManager.instance.floorManager.spawnPosition.position;
+           /* yield return new WaitForSeconds(signStep);
+            Vector3 position = GameManager.instance.floorManager.TileSpawnPoint.position;
             GameObject signPair = Instantiate(signPrefab, position, Quaternion.identity);
 
             Sign[] signs = signPair.GetComponentsInChildren<Sign>();
@@ -70,7 +70,7 @@ public class SurvivalMode : MonoBehaviour
                 }
             }
 
-            maxPoints = max;
+            maxPoints = max;*/
         }
     }
 

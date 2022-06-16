@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64b8658893c614419da2f6afe7e2310, type: 3}
+  m_Name: PlayerUnits
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 6533878375028063792, guid: 04d654c54806be34eb9de1e24c0069fe, type: 3}
+    - {fileID: 6533878375028063792, guid: cc7a3712377eca649aa0cb3073f391e7, type: 3}
+    - {fileID: 6533878375028063792, guid: 2544c6ac47e872c429333117aaeb8386, type: 3}
+    - {fileID: 6533878375028063792, guid: fbb89a35a401ec44db401b01d148d769, type: 3}
+    - {fileID: 6533878375028063792, guid: 8d0bba81f27ef11429afac967e1aa3d7, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: costPairs
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[PrefabPair`1[[System.Int32, mscorlib]],
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 1|PrefabPair`1[[System.Int32, mscorlib]], Assembly-CSharp
+    - Name: value
+      Entry: 3
+      Data: 100
+    - Name: prefab
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|PrefabPair`1[[System.Int32, mscorlib]], Assembly-CSharp
+    - Name: value
+      Entry: 3
+      Data: 25
+    - Name: prefab
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|PrefabPair`1[[System.Int32, mscorlib]], Assembly-CSharp
+    - Name: value
+      Entry: 3
+      Data: 10
+    - Name: prefab
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|PrefabPair`1[[System.Int32, mscorlib]], Assembly-CSharp
+    - Name: value
+      Entry: 3
+      Data: 5
+    - Name: prefab
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PrefabPair`1[[System.Int32, mscorlib]], Assembly-CSharp
+    - Name: value
+      Entry: 3
+      Data: 1
+    - Name: prefab
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
