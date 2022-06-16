@@ -25,33 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateDirection()
     {
         direction = Vector3.forward * PlayerManager.Instance.VerticalSpeed;
-        float horizontal = 1f;
-
-#if UNITY_ANDROID || UNITY_IOS
-        horizontal = GetHorizontalViaTouch();
-#elif UNITY_EDITOR
-        horizontal = GetHorizontalViaKeyBoard();
-#endif
+        float horizontal = InputController.GetHorizontalAxis();
         direction = new Vector3(horizontal * PlayerManager.Instance.HorizontalSpeed, 0f, PlayerManager.Instance.VerticalSpeed);
-    }
-
-    private float GetHorizontalViaTouch()
-    {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            return touchDeltaPosition.x;
-        }
-        return 0f;
-    }
-
-    private float GetHorizontalViaKeyBoard()
-    {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        {
-            return Input.GetAxis("Horizontal");
-        }
-        return 0f;
     }
 
     private void Move()
