@@ -17,7 +17,7 @@ public class Unit : PoolableObject<Unit>
         _countText.gameObject.SetActive(false);
     }
 
-    public new void Reset()
+    protected new void Reset()
     {
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;

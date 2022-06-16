@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Controls the movement of camera */
 public class CameraController : MonoBehaviour
 {
 	void LateUpdate()

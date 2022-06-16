@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-/* Controls the movement and collisions of enemy units and leader */
 public class EnemyMovement : MonoBehaviour
 {
     public EnemySquad Squad { get; set; }
@@ -13,12 +12,12 @@ public class EnemyMovement : MonoBehaviour
         if (!gameObject.TryGetComponent<EnemyAnimator>(out EnemyAnimator anim))
         {
             Debug.Log("Missing EnemyAnimator Script!");
-            gameObject.AddComponent<EnemyAnimator>();
+            anim = gameObject.AddComponent<EnemyAnimator>();
         }
         _animator = anim;
     }
 
-    void Update()
+    private void Update()
     {
         UpdateDirection();
         Move();

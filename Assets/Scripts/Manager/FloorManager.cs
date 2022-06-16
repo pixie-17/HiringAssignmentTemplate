@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-/* Controls the spawning of tiles */
 public class FloorManager : MonoBehaviour
 {
     public static FloorManager Instance { get; set; }

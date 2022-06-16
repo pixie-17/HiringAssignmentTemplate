@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Main game controller */
 public class GameManager : MonoBehaviour
 {
     [field: SerializeField]

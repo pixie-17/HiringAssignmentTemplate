@@ -5,7 +5,6 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 
-/* Controls the formation of units */
 public abstract class Squad : MonoBehaviour
 {
     [InfoBox("The spawn position of leader is at center of formation = the first position in formation!")]

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-/* Controls the text at a math billboard */
 public class Sign : PoolableObject<Sign>
 {
     [SerializeField]
