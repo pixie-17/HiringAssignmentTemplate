@@ -48,26 +48,6 @@ public class PlayerManager : Squad
         CancelCollision();
     }
 
-    private void Die()
-    {
-        DestroySquad();
-        OnDeath();
-    }
-
-    private void OnEnable()
-    {
-        PlayerMovement.OnHit += CollideWithRegularSign;
-        EnemySquad.OnHit += RecomputeSquad;
-        EnemySquad.OnDeath += Die;
-    }
-
-    private void OnDisable()
-    {
-        PlayerMovement.OnHit -= CollideWithRegularSign;
-        EnemySquad.OnHit -= RecomputeSquad;
-        EnemySquad.OnDeath -= Die;
-    }
-
     protected override UnitObjectPooler GetObjectPooler(GameObject prefab)
     {
         if (!_pools.ContainsKey(prefab))
@@ -104,5 +84,25 @@ public class PlayerManager : Squad
             OnHitSign(sign);
             RecomputeSquad(result);
         }
+    }
+
+    private void Die()
+    {
+        DestroySquad();
+        OnDeath();
+    }
+
+    private void OnEnable()
+    {
+        PlayerMovement.OnHit += CollideWithRegularSign;
+        EnemySquad.OnHit += RecomputeSquad;
+        EnemySquad.OnDeath += Die;
+    }
+
+    private void OnDisable()
+    {
+        PlayerMovement.OnHit -= CollideWithRegularSign;
+        EnemySquad.OnHit -= RecomputeSquad;
+        EnemySquad.OnDeath -= Die;
     }
 }

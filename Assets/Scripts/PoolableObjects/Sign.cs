@@ -25,6 +25,7 @@ public class Sign : PoolableObject<Sign>
         Prefab = template.Prefab;
         UpdateText();
     }
+
     private void UpdateText()
     {
         _text.text = "X " + Equation;

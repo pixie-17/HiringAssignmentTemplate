@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/* Classes for mathematical equations */
 
+/* Classes for mathematical equations */
 [System.Serializable]
 public enum OperationType
 {
