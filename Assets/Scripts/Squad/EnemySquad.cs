@@ -12,10 +12,10 @@ public class EnemySquad : Squad
 
     public void InitializeFromConfigFile(SquadDefinition config, Vector3 point)
     {
-        _formationPrefab = config.FormationPrefab;
-        _angle = config.Angle;
+        _formationPrefab = config.SquadTemplate.FormationPrefab;
+        _angle = config.SquadTemplate.Angle;
         _count = config.Count;
-        _characterDictionary = config.UnitValues;
+        _characterDictionary = config.SquadTemplate.UnitValues;
         transform.position = point;
 
         base.Initialize();

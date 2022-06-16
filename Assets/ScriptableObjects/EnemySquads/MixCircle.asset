@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfaa08c4a09000d4ebb4eb7a903e7e84, type: 3}
-  m_Name: EnemySquad 4
+  m_Script: {fileID: 11500000, guid: 619aeab5c1fabf94ea0fe434b19e6c2d, type: 3}
+  m_Name: MixCircle
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,9 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <FormationPrefab>k__BackingField: {fileID: 1008294345393968670, guid: c6aca5790f761c84788efe9858a9f93f,
+  <FormationPrefab>k__BackingField: {fileID: 1008294345393968670, guid: 7a62f7ee69ee7e341ad6debc8c748728,
     type: 3}
-  <UnitValues>k__BackingField: {fileID: 11400000, guid: 0e5dda879205e87469206862854b0988,
+  <UnitValues>k__BackingField: {fileID: 11400000, guid: 30cf5141f5e22194ea987181891a220c,
     type: 2}
   <Angle>k__BackingField: 180
-  <Count>k__BackingField: 7

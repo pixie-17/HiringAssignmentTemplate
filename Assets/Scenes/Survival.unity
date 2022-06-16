@@ -728,8 +728,38 @@ PrefabInstance:
     - target: {fileID: 1186855124871225743, guid: f0cc5953e11d89f409fc30931baf5395,
         type: 3}
       propertyPath: _squadConfigsList.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1186855124871225743, guid: f0cc5953e11d89f409fc30931baf5395,
+        type: 3}
+      propertyPath: _squadConfigsList.Array.data[0].<SquadTemplate>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b7cc1ba721d4e144a6958efdaa26de1,
+        type: 2}
+    - target: {fileID: 1186855124871225743, guid: f0cc5953e11d89f409fc30931baf5395,
+        type: 3}
+      propertyPath: _squadConfigsList.Array.data[1].<SquadTemplate>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f3fb980585c07441836dc2c1dabb473,
+        type: 2}
+    - target: {fileID: 1186855124871225743, guid: f0cc5953e11d89f409fc30931baf5395,
+        type: 3}
+      propertyPath: _squadConfigsList.Array.data[2].<SquadTemplate>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: d49449c4406e3c942ada4f41099e0211,
+        type: 2}
+    - target: {fileID: 1186855124871225743, guid: f0cc5953e11d89f409fc30931baf5395,
+        type: 3}
+      propertyPath: _squadConfigsList.Array.data[3].<SquadTemplate>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: d951b80c5a8408946948f542ad1cab91,
+        type: 2}
+    - target: {fileID: 1186855124871225743, guid: f0cc5953e11d89f409fc30931baf5395,
+        type: 3}
+      propertyPath: _squadConfigsList.Array.data[4].<SquadTemplate>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: b6b003cf911cf454abe0125ae61ec4db,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0cc5953e11d89f409fc30931baf5395, type: 3}
 --- !u!1 &1672310000

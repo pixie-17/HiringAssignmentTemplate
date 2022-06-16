@@ -48,17 +48,20 @@ public class SignManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        if (GameManager.Instance.Survival) {
-            InitializeObjectPoolFromList(_prefabs);
-        } else
-        {
-            InitializeObjectPool();
-        }
         signPairs = new Queue<SignNeighbors>(signPairsList);
     }
 
     private void Start()
     {
+        if (GameManager.Instance.Survival)
+        {
+            InitializeObjectPoolFromList(_prefabs);
+        }
+        else
+        {
+            InitializeObjectPool();
+        }
+
         for (int i = 0; i < _initSigns; ++i)
         {
             SpawnSigns();

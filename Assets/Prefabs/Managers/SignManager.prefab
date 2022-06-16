@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3778f37ada9d442ad6360f125b3996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _signCountRange: {x: 2, y: 3}
   _initSigns: 3
-  _prefab: {fileID: 1143588746045165609, guid: 3ec7a376b3b43a74e962131d93fb6e52, type: 3}
+  _prefabs: []
   _maxPoolCount: 8
+  _basePoolCount: 4
   verticalStep: 10
   _signRotation: {x: -90, y: 90, z: -90}
   _signSpawnPoint: {fileID: 0}
@@ -54,92 +56,78 @@ MonoBehaviour:
     type: 3}
   signPairsList:
   - neighbors:
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 5
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
+        <Operand>k__BackingField: 0
   - neighbors:
-    - <Material>k__BackingField: {fileID: 2100000, guid: eb2e7fbff4d20444f9bf25d687072f69,
-        type: 2}
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 7
-    - <Material>k__BackingField: {fileID: 2100000, guid: 23d99450ee9c2ec468fc51d19cc4f39a,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
+        <Operand>k__BackingField: 0
   - neighbors:
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 8
-    - <Material>k__BackingField: {fileID: 2100000, guid: 74deb72c53db635479c108dbacd68bb2,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
+        <Operand>k__BackingField: 0
   - neighbors:
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 9
-    - <Material>k__BackingField: {fileID: 2100000, guid: eb2e7fbff4d20444f9bf25d687072f69,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
+        <Operand>k__BackingField: 0
   - neighbors:
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 10
-    - <Material>k__BackingField: {fileID: 2100000, guid: eb2e7fbff4d20444f9bf25d687072f69,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
+        <Operand>k__BackingField: 0
   - neighbors:
-    - <Material>k__BackingField: {fileID: 2100000, guid: 50a345d1bf0a339418c543a37fa1a609,
-        type: 2}
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 4
-    - <Material>k__BackingField: {fileID: 2100000, guid: eb2e7fbff4d20444f9bf25d687072f69,
-        type: 2}
+        <Operand>k__BackingField: 0
+    - <Prefab>k__BackingField: {fileID: 0}
       <Equation>k__BackingField:
-        operation:
+        <Operation>k__BackingField:
           type: 0
-        operand: 0
+        <Operand>k__BackingField: 0

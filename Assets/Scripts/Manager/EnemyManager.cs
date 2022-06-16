@@ -65,7 +65,7 @@ public class EnemyManager : MonoBehaviour
         _pools = new Dictionary<GameObject, UnitObjectPooler>();
         foreach (SquadDefinition config in _squadConfigsList)
         {
-            CharacterDictionary characterDictionary = config.UnitValues;
+            CharacterDictionary characterDictionary = config.SquadTemplate.UnitValues;
             foreach (var pair in characterDictionary.costPairs)
             {
                 if (!_pools.ContainsKey(pair.prefab))
