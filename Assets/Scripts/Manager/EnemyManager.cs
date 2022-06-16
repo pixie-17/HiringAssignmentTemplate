@@ -21,12 +21,8 @@ public class EnemyManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _squadConfigs = new Queue<SquadDefinition>(_squadConfigsList);
-    }
-
-    private void Start()
-    {
         InitializeObjectPools();
+        _squadConfigs = new Queue<SquadDefinition>(_squadConfigsList);
     }
 
     public UnitObjectPooler GetObjectPooler(GameObject prefab)
