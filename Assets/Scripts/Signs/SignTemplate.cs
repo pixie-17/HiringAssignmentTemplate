@@ -17,4 +17,10 @@ public class SignTemplate
     
     [field: SerializeField]
     public Equation Equation { get; set; }
+
+    public SignTemplate(GameObject prefab, Equation equation)
+    {
+        this.Prefab = prefab;
+        this.Equation = equation;
+    }
 }

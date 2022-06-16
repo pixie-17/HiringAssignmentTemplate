@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class SignManager : MonoBehaviour
 {
@@ -8,11 +9,9 @@ public class SignManager : MonoBehaviour
 
     private Dictionary<GameObject, SignObjectPooler> _pools;
 
+    [InfoBox("Range = [x,y)")]
     [SerializeField]
-    private int _minSignsInRow = 2;
-
-    [SerializeField]
-    private int _maxSignsInRow = 3;
+    private Vector2Int _signCountRange = new Vector2Int(2, 3);
 
     [SerializeField]
     private int _initSigns = 3;
@@ -37,7 +36,6 @@ public class SignManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _endPrefab;
-
     private GameObject _endObject;
 
     [SerializeField]
@@ -59,6 +57,14 @@ public class SignManager : MonoBehaviour
         signPairs = new Queue<SignNeighbors>(signPairsList);
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < _initSigns; ++i)
+        {
+            SpawnSigns();
+        }
+    }
+
     private void InitializeObjectPool()
     {
         _pools = new Dictionary<GameObject, SignObjectPooler>();
@@ -66,16 +72,7 @@ public class SignManager : MonoBehaviour
         {
             foreach (SignTemplate template in signs.neighbors)
             {
-                if (!_pools.ContainsKey(template.Prefab))
-                {
-                    _pools[template.Prefab] = gameObject.AddComponent<SignObjectPooler>();
-                    _pools[template.Prefab].MaxPoolCount = _basePoolCount;
-                    _pools[template.Prefab].Prefab = template.Prefab;
-                }
-                else
-                {
-                    _pools[template.Prefab].MaxPoolCount += _basePoolCount;
-                }
+                UpdatePool(template.Prefab);
             }
         }
     }
@@ -85,40 +82,34 @@ public class SignManager : MonoBehaviour
         _pools = new Dictionary<GameObject, SignObjectPooler>();
         foreach (GameObject prefab in prefabs)
         {
-            if (!_pools.ContainsKey(prefab))
-            {
-                _pools[prefab] = gameObject.AddComponent<SignObjectPooler>();
-                _pools[prefab].MaxPoolCount = _basePoolCount;
-                _pools[prefab].Prefab = prefab;
-            }
-            else
-            {
-                _pools[prefab].MaxPoolCount += _basePoolCount;
-            }
+            UpdatePool(prefab);
         }
     }
 
-    private void Start()
+    private void UpdatePool(GameObject prefab)
     {
-        for (int i = 0; i < _initSigns; ++i)
+        if (!_pools.ContainsKey(prefab))
         {
-            SpawnSigns();
+            _pools[prefab] = gameObject.AddComponent<SignObjectPooler>();
+            _pools[prefab].MaxPoolCount = _basePoolCount;
+            _pools[prefab].Prefab = prefab;
+        }
+        else
+        {
+            _pools[prefab].MaxPoolCount += _basePoolCount;
         }
     }
 
-    private void InitializeSigns()
+    private void InitializeRandomSigns()
     {
-        int count = Random.Range(_minSignsInRow, _maxSignsInRow + 1);
+        int count = Random.Range(_signCountRange.x, _signCountRange.y + 1);
         List<Equation> equations = EquationOracle.Instance.ChooseEquations(count);
 
         SignNeighbors signs = new SignNeighbors();
 
         foreach (Equation equation in equations)
         {
-            SignTemplate template = new SignTemplate();
-            template.Prefab = _prefabs[Random.Range(0, _prefabs.Count)];
-            template.Equation = equation;
-            signs.neighbors.Add(template);
+            signs.neighbors.Add(new SignTemplate(_prefabs[Random.Range(0, _prefabs.Count)], equation));
         }
 
         signPairs.Enqueue(signs);
@@ -126,7 +117,7 @@ public class SignManager : MonoBehaviour
 
     private void SpawnSigns()
     {
-        if (GameManager.Instance.Survival) InitializeSigns();
+        if (GameManager.Instance.Survival) InitializeRandomSigns();
 
         if (signPairs.Count != 0)
         {
@@ -140,7 +131,7 @@ public class SignManager : MonoBehaviour
             foreach (SignTemplate template in signsToSpawn)
             {
 
-                Sign sign = SpawnSign(template, scale, idx);
+                Sign sign = SpawnSingleSign(template, scale, idx);
                 if (sign == null) continue;
                 signs.Add(sign);
                 idx++;
@@ -155,24 +146,11 @@ public class SignManager : MonoBehaviour
             _signSpawnPoint.Translate(verticalStep * Vector3.forward);
         } else
         {
-            if (!GameManager.Instance.Survival && _endObject == null)
-            {
-                SpawnEnd();
-            }
+            if (!GameManager.Instance.Survival && _endObject == null) SpawnEnd();
         }
     }
 
-    private SignObjectPooler GetObjectPooler(GameObject prefab)
-    {
-        if (!_pools.ContainsKey(prefab))
-        {
-            Debug.Log("Unknown Prefab!");
-            return null;
-        }
-        return _pools[prefab];
-    }
-
-    private Sign SpawnSign(SignTemplate template, Vector3 scale, int idx)
+    private Sign SpawnSingleSign(SignTemplate template, Vector3 scale, int idx)
     {
         SignObjectPooler pool = GetObjectPooler(template.Prefab);
         
@@ -195,6 +173,16 @@ public class SignManager : MonoBehaviour
         sign.transform.position = _signSpawnPoint.position + new Vector3(step * idx, 0f, 0f);
         sign.transform.rotation = Quaternion.Euler(_signRotation);
         return sign;
+    }
+
+    private SignObjectPooler GetObjectPooler(GameObject prefab)
+    {
+        if (!_pools.ContainsKey(prefab))
+        {
+            Debug.Log("Unknown Prefab!");
+            return null;
+        }
+        return _pools[prefab];
     }
 
     private void SpawnEnd()

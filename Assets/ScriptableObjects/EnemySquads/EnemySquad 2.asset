@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfaa08c4a09000d4ebb4eb7a903e7e84, type: 3}
-  m_Name: EnemySquad
+  m_Name: EnemySquad 2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,9 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <FormationPrefab>k__BackingField: {fileID: 1008294345393968670, guid: b524b6e534bb0f049a0915595deab2a4,
+  <FormationPrefab>k__BackingField: {fileID: 1008294345393968670, guid: 7a62f7ee69ee7e341ad6debc8c748728,
     type: 3}
-  <UnitValues>k__BackingField: {fileID: 11400000, guid: 30cf5141f5e22194ea987181891a220c,
+  <UnitValues>k__BackingField: {fileID: 11400000, guid: 6b8705741d1aa3544b55631035976947,
     type: 2}
   <Angle>k__BackingField: 180
-  <Count>k__BackingField: 8
+  <Count>k__BackingField: 14
