@@ -23,6 +23,8 @@ public class PlayerManager : Squad
     public delegate void ChangeCountSign(Sign sign);
     public static event ChangeCountSign OnHitSign;
 
+    public delegate void Recomputed();
+    public static event Recomputed OnRecompute;
 
     private void Awake()
     {
@@ -40,6 +42,7 @@ public class PlayerManager : Squad
         }
         else
         {
+            OnRecompute();
             base.RecomputeSquad(newCount);
         }
         CancelCollision();

@@ -4,27 +4,25 @@ using UnityEngine;
 using TMPro;
 
 /* Controls the text at a math billboard */
-[RequireComponent(typeof(MeshRenderer))]
 public class Sign : PoolableObject<Sign>
 {
     [SerializeField]
     private TMP_Text _text;
 
     public Equation Equation { get; set; }
-    public Material Material { get; set; }
+    public GameObject Prefab { get; set; }
 
     public List<Sign> NeighboringSigns { get; set; }
 
     void Start()
     {
         UpdateText();
-        GetComponent<MeshRenderer>().material = Material;
     }
 
     public void InitializeFromConfig(SignTemplate template)
     {
         Equation = template.Equation;
-        Material = template.Material;
+        Prefab = template.Prefab;
         UpdateText();
     }
     private void UpdateText()

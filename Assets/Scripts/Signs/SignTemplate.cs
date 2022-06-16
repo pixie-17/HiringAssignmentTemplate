@@ -6,14 +6,14 @@ using UnityEngine;
 public class SignNeighbors
 {
     [field: SerializeField]
-    public List<SignTemplate> neighbors;
+    public List<SignTemplate> neighbors = new List<SignTemplate>();
 }
 
 [System.Serializable]
 public class SignTemplate
 {
     [field: SerializeField]
-    public Material Material { get; set; }
+    public GameObject Prefab { get; set; }
     
     [field: SerializeField]
     public Equation Equation { get; set; }
