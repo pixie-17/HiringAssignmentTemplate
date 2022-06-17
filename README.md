@@ -96,7 +96,7 @@ Manager for game state. Its main job is to listen for when level should be finis
 
 #### PlayerManager
 
-(SIDENOTE: Since the game logic is that player can have only one squad, the PlayerManager is child of Squad while also being a manager ofitself. If there could be more player squads, it would be implemented similar to EnemyManager but for this project it felt like a little overengineering)
+(SIDENOTE: Since the game logic is that player can have only one squad, the PlayerManager is child of Squad while also being a manager ofitself. If there could be more player squads, it would be implemented similar to EnemyManager and then there could be an abstract class/interface for functionality which is similar/same for ObjectManagers but for this project it felt like a little overengineering)
 
 Manager for player squad. It holds own object pools for every prefab used for player unit in that level. Main job is to respawn player squad when needed and decide what should happen when the squad collides with sign.
 
