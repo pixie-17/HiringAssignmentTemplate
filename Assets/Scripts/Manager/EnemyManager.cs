@@ -27,7 +27,7 @@ public class EnemyManager : MonoBehaviour
 
     public UnitObjectPooler GetObjectPooler(GameObject prefab)
     {
-        if (!_pools.ContainsKey(prefab))
+        if (prefab == null || !_pools.ContainsKey(prefab))
         {
             Debug.Log("Unknown Prefab!");
             return null;
@@ -65,18 +65,21 @@ public class EnemyManager : MonoBehaviour
         _pools = new Dictionary<GameObject, UnitObjectPooler>();
         foreach (SquadDefinition config in _squadConfigsList)
         {
-            CharacterDictionary characterDictionary = config.SquadTemplate.UnitValues;
-            foreach (var pair in characterDictionary.costPairs)
+            if (config != null && config.SquadTemplate != null)
             {
-                if (!_pools.ContainsKey(pair.prefab))
+                CharacterDictionary characterDictionary = config.SquadTemplate.UnitValues;
+                foreach (var pair in characterDictionary.costPairs)
                 {
-                    _pools[pair.prefab] = gameObject.AddComponent<UnitObjectPooler>();
-                    _pools[pair.prefab].MaxPoolCount = _basePoolCount;
-                    _pools[pair.prefab].Prefab = pair.prefab;
-                }
-                else
-                {
-                    _pools[pair.prefab].MaxPoolCount += _basePoolCount;
+                    if (!_pools.ContainsKey(pair.prefab))
+                    {
+                        _pools[pair.prefab] = gameObject.AddComponent<UnitObjectPooler>();
+                        _pools[pair.prefab].MaxPoolCount = _basePoolCount;
+                        _pools[pair.prefab].Prefab = pair.prefab;
+                    }
+                    else
+                    {
+                        _pools[pair.prefab].MaxPoolCount += _basePoolCount;
+                    }
                 }
             }
         }

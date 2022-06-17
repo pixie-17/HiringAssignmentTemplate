@@ -180,7 +180,7 @@ public class SignManager : MonoBehaviour
 
     private SignObjectPooler GetObjectPooler(GameObject prefab)
     {
-        if (!_pools.ContainsKey(prefab))
+        if (prefab == null || !_pools.ContainsKey(prefab))
         {
             Debug.Log("Unknown Prefab!");
             return null;

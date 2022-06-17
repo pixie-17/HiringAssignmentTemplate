@@ -49,7 +49,7 @@ public class PlayerManager : Squad
 
     protected override UnitObjectPooler GetObjectPooler(GameObject prefab)
     {
-        if (!_pools.ContainsKey(prefab))
+        if (prefab == null || !_pools.ContainsKey(prefab))
         {
             Debug.Log("Unknown Prefab!");
             return null;
