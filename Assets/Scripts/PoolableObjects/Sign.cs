@@ -9,7 +9,6 @@ public class Sign : PoolableObject<Sign>
     private TMP_Text _text;
 
     public Equation Equation { get; set; }
-    public GameObject Prefab { get; set; }
 
     public List<Sign> NeighboringSigns { get; set; }
 
@@ -21,7 +20,6 @@ public class Sign : PoolableObject<Sign>
     public void InitializeFromConfig(SignTemplate template)
     {
         Equation = template.Equation;
-        Prefab = template.Prefab;
         UpdateText();
     }
 
